@@ -1,17 +1,21 @@
-// #### Model setup
+var orm = require("../config/orm");
 
-// * Inside your `burger` directory, create a folder named `models`.
+var todo = {
+    selectAll: function(callback) {
+        orm.selectAll("todos", function(res) {
+            callback(res);
+        });
+    },
+    insertOne: function(cols, vals, callback) {
+        orm.insertOne("todos", cols, vals, function(res) {
+            callback(res);
+        });
+    },
+    updateOne: function(objColVals, condition, callback) {
+        orm.updateOne("todos", objColVals, condition, function(res) {
+            callback(res);
+        });
+    }
+};
 
-//   * In `models`, make a `burger.js` file.
-
-//     * Inside `burger.js`, import `orm.js` into `burger.js`
-
-//     * Also inside `burger.js`, create the code that will call the ORM functions using burger specific input for the ORM.
-
-//     * Export at the end of the `burger.js` file.
-
-var orm = require("orm.js");
-
-orm.selectAll();
-orm.insertOne();
-orm.updateOne();
+module.exports = todo;

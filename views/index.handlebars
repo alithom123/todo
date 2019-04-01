@@ -1,3 +1,43 @@
-     {{!-- * Setup the `index.handlebars` to have the template that Handlebars can render onto. --}}
+<h1>Todos!</h1>
 
-          {{!-- * Create a button in `index.handlebars` that will submit the user input into the database. --}}
+<h2>A simple todos app instead of silly burger app because I don't want to put that in my portfolio!</h2>
+
+{{!-- <ul>
+  {{#each cats}}
+    {{#unless sleepy}}
+      {{> cats/cat-block sleep=true}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Cats that are sleepy!</h2>
+
+<ul>
+  {{#each cats}}
+    {{#if sleepy}}
+      {{> cats/cat-block sleep=false}}
+    {{/if}}
+  {{/each}}
+</ul> --}}
+
+<h2>Add a Todo</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="tdtitle">Todo Title:</label>
+    <input type="text" id="tdtitle" name="title">
+  </div>
+
+<div class="form-group">
+    <label for="tddetails">Todo Details:</label>
+    <input type="text" id="tddetails" name="details">
+  </div>
+
+  <div class="form-group">
+    <label for="done">Done?</label><br>
+    <input type="radio" name="done" value="1" checked> Done!<br>
+    <input type="radio" name="done" value="0"> Awake
+  </div>
+
+  <button type="submit">Add Todo</button>
+</form>
