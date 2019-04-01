@@ -46,26 +46,3 @@ router.post("/api/todos", function(req,res) {
 });
 
 module.exports = router;
-
-
-// 4. Create the `router` for the app, and export the `router` at the end of your file.
-/// ???
-
-// Static directory to be served
-app.use(express.static("app/public"));
-
-// Routes
-// =============================================================
-require("./app/routes/api-routes.js")(app);
-
-// Here we introduce HTML routing to serve different HTML files
-require("./app/routes/html-routes.js")(app);
-
-// Starts the server to begin listening
-// =============================================================
-app.listen(PORT, function() {
-  console.log("App listening on PORT " + PORT);
-});
-
-module.exports = router; // ???
-

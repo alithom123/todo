@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
   port: 3306,
   user: "root",
   password: "mysql!LKJ33",
-  database: "todos"
+  database: "todo_db"
 });
 
 // Make connection

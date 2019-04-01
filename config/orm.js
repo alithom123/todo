@@ -70,12 +70,18 @@ var orm = {
             }
 
             callback(result);
-        })
+        });
     },
     // An example of objColVals would be {title: "Buy light bulbs", details: "From home depot on satureday."}
-    updateOne = function updateOne(table, objColVals, condition, callback) {
+    updateOne: function updateOne(table, objColVals, condition, callback) {
         console.log("Running updateOne");
-        var queryString = "";
+        var queryString = "UPDATE "+ table;
+        queryString += " SET ";
+        queryString += objToSql(objColVals);
+        queryString += " WHERE ";
+        queryString += condition;
+
+        console.log(queryString);
         connection.query(queryString, function(err,result) {
             if (err) {
                 throw err;
