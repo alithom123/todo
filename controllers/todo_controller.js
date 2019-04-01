@@ -6,6 +6,7 @@ var router = express.Router();
 var todo = require("../models/todo");
 
 router.get("/", function(req, res) {
+  console.log("Got a / request");
   todo.selectAll(function(data) {
     var handlebarsObj = {
       todos: data
